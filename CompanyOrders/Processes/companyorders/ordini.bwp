@@ -23,6 +23,8 @@
     xmlns:ns22="http://www.example.org/RichiesteSOAP"
     xmlns:ns23="http://tns.tibco.com/bw/palette/internal/activityerror+063624bf-625b-49e6-956e-c927e2b7d5c6"
     xmlns:ns24="http://tns.tibco.com/bw/palette/internal/activityerror+4a5df69a-4ae3-4ea1-b61f-4e64cf84eba3"
+    xmlns:ns25="http://xmlns.example.com/20250724111926PLT"
+    xmlns:ns26="http://tns.tibco.com/bw/palette/internal/activityerror+bf74383c-8b61-4253-b7e9-b8b58568ed0f"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
     xmlns:ns4="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:ns5="http://www.example.org/CompanyOrders"
@@ -447,6 +449,7 @@
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:ptyp="http://www.example.org/wsdl/1753281285130"
             xmlns:ptyp1="http://www.example.org/wsdl/1753281285260"
+            xmlns:ptyp2="http://xmlns.example.com/20250724111926PLT"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
             xmlns:tns="http://xmlns.example.com/20250715125007PLT"
             xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
@@ -469,6 +472,7 @@
             <wsdl:import namespace="http://www.example.org/wsdl/1753281285260"/>
             <wsdl:import namespace="http://www.example.org/wsdl/1753281285130"/>
             <wsdl:import namespace="http://www.example.org/wsdl/1753281285130"/>
+            <wsdl:import namespace="http://xmlns.example.com/20250724111926PLT"/>
             <wsdl:message name="postRequest">
                 <wsdl:part element="extns1:Request" name="azienda" tibex:hasMultipleNamespaces="false"/>
                 <wsdl:part element="extns:httpHeaders"
@@ -1485,8 +1489,6 @@
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+3eb1ef34-a745-4d32-a460-aa315fa8ad73+input" prefix="tns"/>
         <tibex:namespaceItem
-            namespace="http://xmlns.example.com/20250715125007PLT" prefix="tns2"/>
-        <tibex:namespaceItem
             namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns3"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
@@ -1502,6 +1504,9 @@
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem
             namespace="http://www.example.org/RichiesteSOAP" prefix="tns8"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.org/operatori" prefix="tns10"/>
+        <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns11"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/CompanyOrders"/>
@@ -1584,10 +1589,10 @@
                                 tibex:xpdlId="7b71a378-7468-4ad5-b779-bbe09eab58dd" variable="postOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20250715125007PLT&quot; xmlns:tns1=&quot;http://www.example.org/CompanyOrders&quot; xmlns:tns6=&quot;http://www.example.org/wsdl/1753281285130&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery&quot;/>&#xa;    &lt;xsl:param name=&quot;Variable&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:Response>&#xa;            &lt;tns1:Status>&#xa;                &lt;xsl:value-of select=&quot;200&quot;/>&#xa;            &lt;/tns1:Status>&#xa;            &lt;tns1:Message>&#xa;                &lt;xsl:value-of select=&quot;'Ricerca avvenuta con successo'&quot;/>&#xa;            &lt;/tns1:Message>&#xa;            &lt;tns1:Company>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/company&quot;/>&#xa;            &lt;/tns1:Company>&#xa;            &lt;tns1:Country>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/country&quot;/>&#xa;            &lt;/tns1:Country>&#xa;            &lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&#xa;                &lt;tns1:Orders>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;id&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:type>&#xa;                        &lt;xsl:value-of select=&quot;type&quot;/>&#xa;                    &lt;/tns1:type>&#xa;                    &lt;tns1:name>&#xa;                        &lt;xsl:value-of select=&quot;name&quot;/>&#xa;                    &lt;/tns1:name>&#xa;                    &lt;tns1:qty>&#xa;                        &lt;xsl:value-of select=&quot;qty&quot;/>&#xa;                    &lt;/tns1:qty>&#xa;                &lt;/tns1:Orders>&#xa;            &lt;/xsl:for-each>&#xa;            &lt;tns1:City>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/city&quot;/>&#xa;            &lt;/tns1:City>&#xa;            &lt;tns1:prezzoTot>&#xa;                &lt;xsl:value-of select=&quot;$Variable&quot;/>&#xa;            &lt;/tns1:prezzoTot>&#xa;        &lt;/tns1:Response>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20250715125007PLT&quot; xmlns:tns1=&quot;http://www.example.org/CompanyOrders&quot; xmlns:tns10=&quot;http://www.example.org/operatori&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery&quot;/>&#xa;    &lt;xsl:param name=&quot;Variable&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:Response>&#xa;            &lt;tns1:Status>&#xa;                &lt;xsl:value-of select=&quot;200&quot;/>&#xa;            &lt;/tns1:Status>&#xa;            &lt;tns1:Message>&#xa;                &lt;xsl:value-of select=&quot;'Ricerca avvenuta con successo'&quot;/>&#xa;            &lt;/tns1:Message>&#xa;            &lt;tns1:Company>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/company&quot;/>&#xa;            &lt;/tns1:Company>&#xa;            &lt;tns1:Country>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/country&quot;/>&#xa;            &lt;/tns1:Country>&#xa;            &lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&#xa;                &lt;tns1:Orders>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;id&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:type>&#xa;                        &lt;xsl:value-of select=&quot;type&quot;/>&#xa;                    &lt;/tns1:type>&#xa;                    &lt;tns1:name>&#xa;                        &lt;xsl:value-of select=&quot;name&quot;/>&#xa;                    &lt;/tns1:name>&#xa;                    &lt;tns1:qty>&#xa;                        &lt;xsl:value-of select=&quot;qty&quot;/>&#xa;                    &lt;/tns1:qty>&#xa;                &lt;/tns1:Orders>&#xa;            &lt;/xsl:for-each>&#xa;            &lt;tns1:City>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/city&quot;/>&#xa;            &lt;/tns1:City>&#xa;            &lt;tns1:prezzoTot>&#xa;                &lt;xsl:value-of select=&quot;$Variable&quot;/>&#xa;            &lt;/tns1:prezzoTot>&#xa;        &lt;/tns1:Response>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20250715125007PLT" xmlns:tns1="http://www.example.org/CompanyOrders" xmlns:tns6="http://www.example.org/wsdl/1753281285130" version="2.0"&gt;&lt;xsl:param name="JDBCQuery"/&gt;&lt;xsl:param name="Variable"/&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns2:postResponse&gt;&lt;ordine&gt;&lt;tns1:Response&gt;&lt;tns1:Status&gt;&lt;xsl:value-of select="200"/&gt;&lt;/tns1:Status&gt;&lt;tns1:Message&gt;&lt;xsl:value-of select="'Ricerca avvenuta con successo'"/&gt;&lt;/tns1:Message&gt;&lt;tns1:Company&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/company"/&gt;&lt;/tns1:Company&gt;&lt;tns1:Country&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/country"/&gt;&lt;/tns1:Country&gt;&lt;xsl:for-each select="$JDBCQuery/Record"&gt;&lt;tns1:Orders&gt;&lt;tns1:Id&gt;&lt;xsl:value-of select="id"/&gt;&lt;/tns1:Id&gt;&lt;tns1:type&gt;&lt;xsl:value-of select="type"/&gt;&lt;/tns1:type&gt;&lt;tns1:name&gt;&lt;xsl:value-of select="name"/&gt;&lt;/tns1:name&gt;&lt;tns1:qty&gt;&lt;xsl:value-of select="qty"/&gt;&lt;/tns1:qty&gt;&lt;/tns1:Orders&gt;&lt;/xsl:for-each&gt;&lt;tns1:City&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/city"/&gt;&lt;/tns1:City&gt;&lt;tns1:prezzoTot&gt;&lt;xsl:value-of select="$Variable"/&gt;&lt;/tns1:prezzoTot&gt;&lt;/tns1:Response&gt;&lt;/ordine&gt;&lt;/tns2:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20250715125007PLT" xmlns:tns1="http://www.example.org/CompanyOrders" xmlns:tns10="http://www.example.org/operatori" version="2.0"&gt;&lt;xsl:param name="JDBCQuery"/&gt;&lt;xsl:param name="Variable"/&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns2:postResponse&gt;&lt;ordine&gt;&lt;tns1:Response&gt;&lt;tns1:Status&gt;&lt;xsl:value-of select="200"/&gt;&lt;/tns1:Status&gt;&lt;tns1:Message&gt;&lt;xsl:value-of select="'Ricerca avvenuta con successo'"/&gt;&lt;/tns1:Message&gt;&lt;tns1:Company&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/company"/&gt;&lt;/tns1:Company&gt;&lt;tns1:Country&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/country"/&gt;&lt;/tns1:Country&gt;&lt;xsl:for-each select="$JDBCQuery/Record"&gt;&lt;tns1:Orders&gt;&lt;tns1:Id&gt;&lt;xsl:value-of select="id"/&gt;&lt;/tns1:Id&gt;&lt;tns1:type&gt;&lt;xsl:value-of select="type"/&gt;&lt;/tns1:type&gt;&lt;tns1:name&gt;&lt;xsl:value-of select="name"/&gt;&lt;/tns1:name&gt;&lt;tns1:qty&gt;&lt;xsl:value-of select="qty"/&gt;&lt;/tns1:qty&gt;&lt;/tns1:Orders&gt;&lt;/xsl:for-each&gt;&lt;tns1:City&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/city"/&gt;&lt;/tns1:City&gt;&lt;tns1:prezzoTot&gt;&lt;xsl:value-of select="$Variable"/&gt;&lt;/tns1:prezzoTot&gt;&lt;/tns1:Response&gt;&lt;/ordine&gt;&lt;/tns2:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
                                     <bpws:target linkName="IterateTopostOut"/>
                                 </bpws:targets>
@@ -1727,9 +1732,7 @@
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:scope name="Iterate"
-                                tibex:group="iterate"
-                                tibex:indexOriginalName="index"
-                                tibex:indexToGlobal="false" tibex:xpdlId="ded8d6f8-0a0e-46bb-94d2-fcbbee63e19d">
+                                tibex:group="iterate" tibex:xpdlId="ded8d6f8-0a0e-46bb-94d2-fcbbee63e19d">
                                 <bpws:targets>
                                     <bpws:target linkName="JDBCQueryToIterate"/>
                                 </bpws:targets>

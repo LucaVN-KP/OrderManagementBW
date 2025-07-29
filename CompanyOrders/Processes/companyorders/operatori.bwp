@@ -349,6 +349,7 @@
             targetNamespace="http://xmlns.example.com/20250724111926PLT"
             xmlns:extns="http://www.example.org/operatori"
             xmlns:extns1="http://tns.tibco.com/bw/REST"
+            xmlns:extns2="http://xmlns.example.com/operatori/parameters"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
             xmlns:tns="http://xmlns.example.com/20250724111926PLT"
@@ -359,6 +360,7 @@
             </plnk:partnerLinkType>
             <wsdl:import namespace="http://www.example.org/operatori"/>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
+            <wsdl:import namespace="http://xmlns.example.com/operatori/parameters"/>
             <wsdl:message name="postRequest">
                 <wsdl:part element="extns:operatoriIn" name="input" tibex:hasMultipleNamespaces="false"/>
                 <wsdl:part element="extns1:httpHeaders"
@@ -1140,6 +1142,7 @@
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/operatori"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/operatori/parameters"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="operatori"
             partnerLinkType="ns:partnerLinkType" sca-bpel:ignore="false" sca-bpel:service="operatori"/>

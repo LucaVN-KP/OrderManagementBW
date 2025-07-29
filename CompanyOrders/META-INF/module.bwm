@@ -2,7 +2,7 @@
 <sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:wsdl_1753263530028="http://www.example.org/wsdl/1753263530028" xmlns:wsdl_1753281285130="http://www.example.org/wsdl/1753281285130" xmlns:wsdl_1753281285260="http://www.example.org/wsdl/1753281285260" xmi:id="_jSpOAGFgEfC3S5__sp1pPw" targetNamespace="http://tns.tibco.com/bw/composite/CompanyOrders" name="CompanyOrders" compositeext:version="1.0.0" compositeext:formatVersion="2">
   <sca:service xmi:id="_eg2j4WFpEfC3S5__sp1pPw" name="ordini" promote="Componentordini/ordini">
     <sca:interface.wsdl xmi:id="_ehKF4GFpEfC3S5__sp1pPw" interface="http://xmlns.example.com/20250715125007PLT#wsdl.interface(ordini)" scaext:wsdlLocation="../Processes/companyorders/ordini.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ehnY4GFpEfC3S5__sp1pPw" name="RestService" path="/ordini" docBasePath="http://localhost:7777/CompanyOrders" docResourcePath="ordini" basePath="/" connector="companyorders.ordini" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/companyorders.ordini-ordini.json">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ehnY4GFpEfC3S5__sp1pPw" name="RestService" path="/ordini" docBasePath="http://localhost:7777/CompanyOrders" docResourcePath="ordini" basePath="/" connector="companyorders.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/companyorders.ordini-ordini.json">
       <operation xmi:id="_ehzmIGFpEfC3S5__sp1pPw" operationName="post" nickname="post-ordini" httpMethod="POST" notes="postOrdini" responseStyle="element" requestStyle="element" outputPartName="ordine">
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
@@ -35,12 +35,11 @@
   </sca:service>
   <sca:service xmi:id="_S_HGAGhvEfCyb6lrZNCyqQ" name="operatori" promote="Componentoperatori/operatori">
     <sca:interface.wsdl xmi:id="_S_e5cGhvEfCyb6lrZNCyqQ" interface="http://xmlns.example.com/20250724111926PLT#wsdl.interface(operatori)" scaext:wsdlLocation="../Processes/companyorders/operatori.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_S_v_MGhvEfCyb6lrZNCyqQ" name="RestService1" path="/operatori" docBasePath="http://localhost:7777/CompanyOrders" docResourcePath="operatori" basePath="/" connector="companyorders.ordini" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/companyorders.operatori-operatori.json">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_S_v_MGhvEfCyb6lrZNCyqQ" name="RestService1" path="/operatori" docBasePath="http://localhost:7777/CompanyOrders" docResourcePath="operatori" basePath="/" connector="companyorders.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/companyorders.operatori-operatori.json">
       <operation xmi:id="_S_xNUGhvEfCyb6lrZNCyqQ" operationName="post" nickname="post-operatori" httpMethod="POST" notes="postOperatori" responseStyle="element" requestStyle="element" outputPartName="output">
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
-      <parameters xmi:id="_TAipYGhvEfCyb6lrZNCyqQ"/>
       <advancedConfig xmi:id="_S_v_MWhvEfCyb6lrZNCyqQ" blockingQueueSize="8192"/>
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_S_xNUWhvEfCyb6lrZNCyqQ" bindingName="RestService1"/>
