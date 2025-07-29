@@ -1,0 +1,107 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "ordini",
+    "description" : "ordini service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/ordini" : {
+      "post" : {
+        "summary" : "postOrdini",
+        "description" : "postOrdini",
+        "operationId" : "post-ordini",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Response" : {
+      "type" : "object",
+      "required" : [ "Status", "Company", "Message", "Country", "City", "prezzoTot" ],
+      "properties" : {
+        "Status" : {
+          "type" : "string"
+        },
+        "Message" : {
+          "type" : "string"
+        },
+        "Company" : {
+          "type" : "string"
+        },
+        "Country" : {
+          "type" : "string"
+        },
+        "Orders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Orders",
+            "uniqueItems" : false
+          }
+        },
+        "City" : {
+          "type" : "string"
+        },
+        "prezzoTot" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "Orders" : {
+      "type" : "object",
+      "required" : [ "qty", "name", "Id", "type" ],
+      "properties" : {
+        "Id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "qty" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "Request" : {
+      "type" : "object",
+      "required" : [ "Company", "Country", "City" ],
+      "properties" : {
+        "Company" : {
+          "type" : "string"
+        },
+        "Country" : {
+          "type" : "string"
+        },
+        "City" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

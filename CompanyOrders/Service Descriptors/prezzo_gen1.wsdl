@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/wsdl/1753281285260" xmlns:tns0="http://www.example.org/wsdl/1753281285130" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Prezzo" targetNamespace="http://www.example.org/wsdl/1753281285260">
+          
+  
+  
+  
+  <wsdl:types>
+                    
+    
+    
+    
+    <xsd:schema xmlns="http://www.example.org/wsdl/1753281285130" elementFormDefault="unqualified" targetNamespace="http://www.example.org/wsdl/1753281285130">
+                              
+      
+      
+      
+      <xsd:element name="trovaPrezzoRequest">
+                                        
+        
+        
+        
+        <xsd:complexType>
+                                                  
+          
+          
+          
+          <xsd:sequence>
+                                                            
+            
+            
+            
+            <xsd:element name="Id" type="xsd:integer"/>
+                                                            
+            
+            
+            
+            <xsd:element name="type" type="xsd:string"/>
+                                                            
+            
+            
+            
+            <xsd:element name="name" type="xsd:string"/>
+                                                            
+            
+            
+            
+            <xsd:element name="quantity" type="xsd:integer"/>
+                                                          
+          
+          
+          
+          </xsd:sequence>
+                                                
+        
+        
+        
+        </xsd:complexType>
+                                      
+      
+      
+      
+      </xsd:element>
+                              
+      
+      
+      
+      <xsd:element name="trovaPrezzoResponse">
+                                        
+        
+        
+        
+        <xsd:complexType>
+                                                  
+          
+          
+          
+          <xsd:sequence>
+                                                            
+            
+            
+            
+            <xsd:element name="TotalPrice" type="xsd:decimal"/>
+                                                          
+          
+          
+          
+          </xsd:sequence>
+                                                
+        
+        
+        
+        </xsd:complexType>
+                                      
+      
+      
+      
+      </xsd:element>
+                                    
+      
+      
+      
+      <xsd:element name="operationRequest">
+                                
+        
+        
+        <xsd:complexType>
+                                        
+          
+          
+          <xsd:sequence>
+                                                
+            
+            
+            <xsd:element name="in" type="xsd:string"/>
+                                              
+          
+          
+          </xsd:sequence>
+                                      
+        
+        
+        </xsd:complexType>
+                              
+      
+      
+      </xsd:element>
+                                    
+      
+      
+      
+      <xsd:element name="operationResponse">
+                                
+        
+        
+        <xsd:complexType>
+                                        
+          
+          
+          <xsd:sequence>
+                                                
+            
+            
+            <xsd:element name="out" type="xsd:string"/>
+                                              
+          
+          
+          </xsd:sequence>
+                                      
+        
+        
+        </xsd:complexType>
+                              
+      
+      
+      </xsd:element>
+                                
+            
+      
+      
+      <xsd:element name="operation1Request">
+                        
+        
+        <xsd:complexType>
+                              
+          
+          <xsd:sequence>
+                                    
+            
+            <xsd:element name="in" type="xsd:string"/>
+                                  
+          
+          </xsd:sequence>
+                            
+        
+        </xsd:complexType>
+                      
+      
+      </xsd:element>
+                              
+      
+      
+      <xsd:element name="operation1Response">
+                        
+        
+        <xsd:complexType>
+                              
+          
+          <xsd:sequence>
+                                    
+            
+            <xsd:element name="out" type="xsd:string"/>
+                                  
+          
+          </xsd:sequence>
+                            
+        
+        </xsd:complexType>
+                      
+      
+      </xsd:element>
+                          
+    
+    
+    </xsd:schema>
+                  
+  
+  
+  
+  </wsdl:types>
+          
+  
+  
+  
+  <wsdl:message name="trovaPrezzoRequest">
+                    
+    
+    
+    
+    <wsdl:part element="tns0:trovaPrezzoRequest" name="parameters"/>
+                  
+  
+  
+  
+  </wsdl:message>
+          
+  
+  
+  
+  <wsdl:message name="trovaPrezzoResponse">
+                    
+    
+    
+    
+    <wsdl:part element="tns0:trovaPrezzoResponse" name="parameters"/>
+                  
+  
+  
+  
+  </wsdl:message>
+            
+  
+  
+          
+  
+  
+          
+    
+      
+      
+  
+  
+  <wsdl:portType name="Prezzo">
+                    
+    
+    
+    
+    <wsdl:operation name="trovaPrezzo">
+                              
+      
+      
+      
+      <wsdl:input message="tns:trovaPrezzoRequest" name="trovaPrezzoInput"/>
+                              
+      
+      
+      
+      <wsdl:output message="tns:trovaPrezzoResponse" name="trovaPrezzoOutput"/>
+                            
+    
+    
+    
+    </wsdl:operation>
+                        
+    
+    
+                
+        
+        
+  
+  
+  </wsdl:portType>
+          
+  
+  
+  
+  <wsdl:binding name="SOAPServiceBinding" type="tns:Prezzo">
+                    
+    
+    
+    
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+                    
+    
+    
+    
+    <wsdl:operation name="trovaPrezzo">
+                              
+      
+      
+      
+      <soap:operation soapAction="trovaPrezzo" style="document"/>
+                              
+      
+      
+      
+      <wsdl:input>
+                                        
+        
+        
+        
+        <soap:body parts="parameters" use="literal"/>
+                                      
+      
+      
+      
+      </wsdl:input>
+                              
+      
+      
+      
+      <wsdl:output>
+                                        
+        
+        
+        
+        <soap:body parts="parameters" use="literal"/>
+                                      
+      
+      
+      
+      </wsdl:output>
+                            
+    
+    
+    
+    </wsdl:operation>
+                  
+  
+  
+  
+  </wsdl:binding>
+          
+  
+  
+  
+  <wsdl:service name="Prezzo">
+                    
+    
+    
+    
+    <wsdl:port binding="tns:SOAPServiceBinding" name="PrezzoSOAP">
+                              
+      
+      
+      
+      <soap:address location="http://localhost:8082/SOAPServiceBinding/prezzo/"/>
+                            
+    
+    
+    
+    </wsdl:port>
+                  
+  
+  
+  
+  </wsdl:service>
+        
+
+
+
+</wsdl:definitions>

@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/CompanyOrders/Service Descriptors/companyorders.ordini-ordini.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/CompanyOrders"
+    },
+    {
+        "jsonSchemaLocation": "/CompanyOrders/Service Descriptors/companyorders.operatori-operatori.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/operatori"
+    }
+]}

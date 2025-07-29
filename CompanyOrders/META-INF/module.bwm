@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:wsdl_1753263530028="http://www.example.org/wsdl/1753263530028" xmlns:wsdl_1753281285130="http://www.example.org/wsdl/1753281285130" xmlns:wsdl_1753281285260="http://www.example.org/wsdl/1753281285260" xmi:id="_jSpOAGFgEfC3S5__sp1pPw" targetNamespace="http://tns.tibco.com/bw/composite/CompanyOrders" name="CompanyOrders" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_eg2j4WFpEfC3S5__sp1pPw" name="ordini" promote="Componentordini/ordini">
+    <sca:interface.wsdl xmi:id="_ehKF4GFpEfC3S5__sp1pPw" interface="http://xmlns.example.com/20250715125007PLT#wsdl.interface(ordini)" scaext:wsdlLocation="../Processes/companyorders/ordini.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ehnY4GFpEfC3S5__sp1pPw" name="RestService" path="/ordini" docBasePath="http://localhost:7777/CompanyOrders" docResourcePath="ordini" basePath="/" connector="companyorders.ordini" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/companyorders.ordini-ordini.json">
+      <operation xmi:id="_ehzmIGFpEfC3S5__sp1pPw" operationName="post" nickname="post-ordini" httpMethod="POST" notes="postOrdini" responseStyle="element" requestStyle="element" outputPartName="ordine">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_empC0GFpEfC3S5__sp1pPw"/>
+      <advancedConfig xmi:id="_ehnY4WFpEfC3S5__sp1pPw" blockingQueueSize="8192"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_ehzmIWFpEfC3S5__sp1pPw" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_YopPsGfSEfC37588MUXaUg" name="Prezzo" promote="Componentprezzo/Prezzo">
+    <sca:interface.wsdl xmi:id="_YpBDIGfSEfC37588MUXaUg" interface="http://www.example.org/wsdl/1753281285130#wsdl.interface(Prezzo)" scaext:wsdlLocation="../Service%20Descriptors/prezzo.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_vBaMAGfTEfC37588MUXaUg" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/f46b88ddf0b54d0ba12b96333b18fb44/SOAPServiceBinding" portTypeQName="wsdl_1753281285130:Prezzo" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/CompanyOrders/Service%20Descriptors/prezzo.wsdl">
+      <bindingType xmi:id="_vBlyMGfTEfC37588MUXaUg"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_63ebEGfTEfC37588MUXaUg" endpointURI="/SOAPServiceBinding/prezzo/" httpConnector="companyorders.SOAPHTTPConnectorResource"/>
+      <operationConfiguration xmi:id="_vBmZQGfTEfC37588MUXaUg" operationName="trovaPrezzo" action="trovaPrezzo" actionNeeded="true">
+        <bindingType xmi:id="_vBmZQWfTEfC37588MUXaUg"/>
+        <messageConfiguration xmi:id="_vBmZQmfTEfC37588MUXaUg" messageQName="wsdl_1753281285130:trovaPrezzoRequest" wsdlLocation="platform:/resource/CompanyOrders/Service%20Descriptors/prezzo.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_vBmZQ2fTEfC37588MUXaUg" partName="parameters" partElementName="wsdl_1753281285130:trovaPrezzoRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_vBmZRGfTEfC37588MUXaUg" messageQName="wsdl_1753281285130:trovaPrezzoResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/CompanyOrders/Service%20Descriptors/prezzo.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_vBmZRWfTEfC37588MUXaUg" partName="parameters" partElementName="wsdl_1753281285130:trovaPrezzoResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_vBmZRmfTEfC37588MUXaUg">
+          <inputMapping xmi:id="_vBnAUGfTEfC37588MUXaUg"/>
+          <outputMapping xmi:id="_vBnAUWfTEfC37588MUXaUg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_vBnAUmfTEfC37588MUXaUg" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:service xmi:id="_S_HGAGhvEfCyb6lrZNCyqQ" name="operatori" promote="Componentoperatori/operatori">
+    <sca:interface.wsdl xmi:id="_S_e5cGhvEfCyb6lrZNCyqQ" interface="http://xmlns.example.com/20250724111926PLT#wsdl.interface(operatori)" scaext:wsdlLocation="../Processes/companyorders/operatori.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_S_v_MGhvEfCyb6lrZNCyqQ" name="RestService1" path="/operatori" docBasePath="http://localhost:7777/CompanyOrders" docResourcePath="operatori" basePath="/" connector="companyorders.ordini" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/companyorders.operatori-operatori.json">
+      <operation xmi:id="_S_xNUGhvEfCyb6lrZNCyqQ" operationName="post" nickname="post-operatori" httpMethod="POST" notes="postOperatori" responseStyle="element" requestStyle="element" outputPartName="output">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_TAipYGhvEfCyb6lrZNCyqQ"/>
+      <advancedConfig xmi:id="_S_v_MWhvEfCyb6lrZNCyqQ" blockingQueueSize="8192"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_S_xNUWhvEfCyb6lrZNCyqQ" bindingName="RestService1"/>
+  </sca:service>
+  <sca:property xmi:id="_lo9lIGFgEfC3S5__sp1pPw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_lpNcwGFgEfC3S5__sp1pPw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_lpS8UGFgEfC3S5__sp1pPw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_lpWmsGFgEfC3S5__sp1pPw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_lpcGQGFgEfC3S5__sp1pPw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_lpgXsGFgEfC3S5__sp1pPw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_lpkpIGFgEfC3S5__sp1pPw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_lpoTgGFgEfC3S5__sp1pPw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_lpsk8GFgEfC3S5__sp1pPw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_egQG8GFpEfC3S5__sp1pPw" name="Componentordini" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_egQG8WFpEfC3S5__sp1pPw" processName="companyorders.ordini"/>
+    <sca:service xmi:id="_egsy4GFpEfC3S5__sp1pPw" name="ordini">
+      <sca:interface.wsdl xmi:id="_eg2j4GFpEfC3S5__sp1pPw" interface="http://xmlns.example.com/20250715125007PLT#wsdl.interface(ordini)" scaext:wsdlLocation="../Processes/companyorders/ordini.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_LD5RQGfSEfC37588MUXaUg" name="Componentprezzo" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_LD5RQWfSEfC37588MUXaUg" processName="companyorders.prezzo"/>
+    <sca:service xmi:id="_YoZ_IGfSEfC37588MUXaUg" name="Prezzo">
+      <sca:interface.wsdl xmi:id="_Yok-QGfSEfC37588MUXaUg" interface="http://www.example.org/wsdl/1753281285130#wsdl.interface(Prezzo)" scaext:wsdlLocation="../Service%20Descriptors/prezzo.wsdl"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_S-y88GhvEfCyb6lrZNCyqQ" name="Componentoperatori" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_S-y88WhvEfCyb6lrZNCyqQ" processName="companyorders.operatori"/>
+    <sca:service xmi:id="_S_BmcGhvEfCyb6lrZNCyqQ" name="operatori">
+      <sca:interface.wsdl xmi:id="_S_C0kGhvEfCyb6lrZNCyqQ" interface="http://xmlns.example.com/20250724111926PLT#wsdl.interface(operatori)" scaext:wsdlLocation="../Processes/companyorders/operatori.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

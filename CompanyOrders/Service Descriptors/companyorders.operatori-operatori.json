@@ -1,0 +1,69 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "operatori",
+    "description" : "operatori service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/operatori" : {
+      "post" : {
+        "summary" : "postOperatori",
+        "description" : "postOperatori",
+        "operationId" : "post-operatori",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/operatoriIn"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a operatoriOut to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/operatoriOut"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "operatoriOut" : {
+      "type" : "object",
+      "required" : [ "Status", "MoT", "Message" ],
+      "properties" : {
+        "Status" : {
+          "type" : "string"
+        },
+        "Message" : {
+          "type" : "string"
+        },
+        "MoT" : {
+          "type" : "string"
+        }
+      }
+    },
+    "operatoriIn" : {
+      "type" : "object",
+      "required" : [ "City", "Date" ],
+      "properties" : {
+        "City" : {
+          "type" : "string"
+        },
+        "Date" : {
+          "type" : "string",
+          "format" : "date"
+        }
+      }
+    }
+  }
+}

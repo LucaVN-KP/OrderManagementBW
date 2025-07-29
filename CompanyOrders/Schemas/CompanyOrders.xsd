@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CompanyOrders" xmlns:tns="http://www.example.org/CompanyOrders" elementFormDefault="qualified">
+	
+	<element name="Company" type="string"/>
+	<element name="Country" type="string"/>
+	<element name="City" type="string"/>
+	<element name="Status" type="string"/>
+	<element name="Message" type="string"/>
+	<element name="Id" type="int"/>
+	<element name="type" type="string"/>
+	<element name="name" type="string"/>
+	<element name="qty" type="int"/>
+	<element name="prezzoTot" type="decimal"/>
+	
+	<element name="Orders" type="tns:OrdersType"/>
+	
+	<complexType name="OrdersType">
+			<sequence>
+			<element ref="tns:Id"/>
+			<element ref="tns:type"/>
+			<element ref="tns:name"/>
+			<element ref="tns:qty"/>
+			</sequence>
+	</complexType>
+	
+	<element name="Request" type="tns:RequestType"/>
+
+	<complexType name="RequestType">
+		<sequence>
+		<element ref="tns:Company"/>
+		<element ref="tns:Country"/>
+		<element ref="tns:City"/>
+		</sequence>
+	</complexType>
+	
+	<element name="Response" type="tns:ResponseType"/>
+	
+	<complexType name="ResponseType">
+		<sequence>
+		<element ref="tns:Status"/>
+		<element ref="tns:Message"/>
+		<element ref="tns:Company"/>
+		<element ref="tns:Country"/>
+		<element ref="tns:Orders" minOccurs="0" maxOccurs="unbounded"/>
+		<element ref="tns:City"/>
+		<element ref="tns:prezzoTot"/>
+		</sequence>
+	</complexType>
+	
+</schema>

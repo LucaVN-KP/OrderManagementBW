@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/RichiesteSOAP" elementFormDefault="qualified" targetNamespace="http://www.example.org/RichiesteSOAP">
+  
+  <!-- magari aggiungere un import, o forse questo xsd è solo inutile -->
+  
+  <element name="Id" type="string"/>
+  
+  <element name="type" type="string"/>
+  
+  <element name="name" type="string"/>
+  
+  <element name="qty" type="integer"/>
+  
+  <element name="request" type="tns:requestType"/>
+  
+  <complexType name="requestType">
+    
+    <sequence>
+      
+      <element ref="tns:Id"/>
+      
+      <element ref="tns:type"/>
+      
+      <element ref="tns:name"/>
+      
+      <element ref="tns:qty"/>
+      
+    </sequence>
+    
+  </complexType>
+  
+</schema>

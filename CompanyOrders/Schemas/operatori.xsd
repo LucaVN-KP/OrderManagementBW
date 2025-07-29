@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/operatori" xmlns:tns="http://www.example.org/operatori" elementFormDefault="qualified">
+
+<element name="operatoriIn" type="tns:InType"/>
+<element name="operatoriOut" type="tns:OutType"/>
+
+<element name="City" type="string"/>
+<element name="Date" type="date"/>
+
+<element name="Status" type="string"/>
+<element name="Message" type="string"/>
+<element name="MoT" type="string"/>
+
+<complexType name="InType">
+<sequence>
+	<element ref="tns:City"/>
+	<element ref="tns:Date"/>
+</sequence>
+</complexType>
+
+<complexType name="OutType">
+<sequence>
+	<element ref="tns:Status"/>
+	<element ref="tns:Message"/>
+	<element ref="tns:MoT"/>
+</sequence>
+</complexType>
+
+</schema>

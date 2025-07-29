@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://www.example.org/wsdl/1753281285130" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="prezzo" targetNamespace="http://www.example.org/wsdl/1753281285130">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="unqualified" targetNamespace="http://www.example.org/wsdl/1753281285130">
+      <xsd:element name="trovaPrezzoRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Id" type="xsd:integer"/>
+            <xsd:element name="type" type="xsd:string"/>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="quantity" type="xsd:integer"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trovaPrezzoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="TotalPrice" type="xsd:decimal"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="trovaPrezzoRequest">
+    <wsdl:part element="tns:trovaPrezzoRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="trovaPrezzoResponse">
+    <wsdl:part element="tns:trovaPrezzoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Prezzo">
+    <wsdl:operation name="trovaPrezzo">
+      <wsdl:input message="tns:trovaPrezzoRequest" name="trovaPrezzoInput"/>
+      <wsdl:output message="tns:trovaPrezzoResponse" name="trovaPrezzoOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
