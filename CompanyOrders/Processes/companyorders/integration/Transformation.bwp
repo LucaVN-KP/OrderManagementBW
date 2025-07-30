@@ -693,7 +693,7 @@
                                     <value
                                     jsonOutputStyle="Json with Root"
                                     schemaType="Xsd" xsi:type="restjson:JsonRender">
-                                    <inputEditorElement href="platform:/resource/CompanyOrders/Schemas/CompanyOrders.xsd#//Request;XSDElementDeclaration=11"/>
+                                    <inputEditorElement href="platform:/resource/CompanyOrders/Schemas/CompanyOrders.xsd#//Request;XSDElementDeclaration=12"/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -727,7 +727,7 @@
                                     <value
                                     jsonInputStyle="Json with Root"
                                     schemaType="Xsd" xsi:type="restjson:JsonParser">
-                                    <outputEditorElement href="platform:/resource/CompanyOrders/Schemas/CompanyOrders.xsd#//Request;XSDElementDeclaration=11"/>
+                                    <outputEditorElement href="platform:/resource/CompanyOrders/Schemas/CompanyOrders.xsd#//Request;XSDElementDeclaration=12"/>
                                     </value>
                                 </properties>
                             </activityConfig>

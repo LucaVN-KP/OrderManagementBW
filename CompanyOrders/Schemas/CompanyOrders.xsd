@@ -11,6 +11,7 @@
 	<element name="name" type="string"/>
 	<element name="qty" type="int"/>
 	<element name="prezzoTot" type="decimal"/>
+	<element name="MoT" type="string"/>
 	
 	<element name="Orders" type="tns:OrdersType"/>
 	
@@ -44,6 +45,7 @@
 		<element ref="tns:Orders" minOccurs="0" maxOccurs="unbounded"/>
 		<element ref="tns:City"/>
 		<element ref="tns:prezzoTot"/>
+		<element ref="tns:MoT"/>
 		</sequence>
 	</complexType>
 	

@@ -35,7 +35,7 @@
   </sca:service>
   <sca:service xmi:id="_S_HGAGhvEfCyb6lrZNCyqQ" name="operatori" promote="Componentoperatori/operatori">
     <sca:interface.wsdl xmi:id="_S_e5cGhvEfCyb6lrZNCyqQ" interface="http://xmlns.example.com/20250724111926PLT#wsdl.interface(operatori)" scaext:wsdlLocation="../Processes/companyorders/operatori.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_S_v_MGhvEfCyb6lrZNCyqQ" name="RestService1" path="/operatori" docBasePath="http://localhost:7777/CompanyOrders" docResourcePath="operatori" basePath="/" connector="companyorders.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/companyorders.operatori-operatori.json">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_S_v_MGhvEfCyb6lrZNCyqQ" name="RestService1" path="/operatori" docBasePath="http://localhost:7777/CompanyOrders" docResourcePath="operatori" basePath="/" connector="companyorders.HTTPConnectorResource1" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/companyorders.operatori-operatori.json">
       <operation xmi:id="_S_xNUGhvEfCyb6lrZNCyqQ" operationName="post" nickname="post-operatori" httpMethod="POST" notes="postOperatori" responseStyle="element" requestStyle="element" outputPartName="output">
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
