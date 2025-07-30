@@ -25,7 +25,11 @@
     xmlns:ns24="http://tns.tibco.com/bw/palette/internal/activityerror+4a5df69a-4ae3-4ea1-b61f-4e64cf84eba3"
     xmlns:ns25="http://xmlns.example.com/20250724111926PLT"
     xmlns:ns26="http://tns.tibco.com/bw/palette/internal/activityerror+bf74383c-8b61-4253-b7e9-b8b58568ed0f"
+    xmlns:ns27="http://tns.tibco.com/bw/palette/internal/activityerror+c2aee75e-4e89-4630-b7fc-1375a47aff95"
+    xmlns:ns28="http://tns.tibco.com/bw/palette/internal/activityerror+81de8cbe-695e-4cae-be8c-84125dc1445c"
+    xmlns:ns29="http://tns.tibco.com/bw/palette/internal/activityerror+f33a96df-8ac1-44a7-8a08-c14e3c926787"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
+    xmlns:ns30="http://simple.schema/simple"
     xmlns:ns4="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:ns5="http://www.example.org/CompanyOrders"
     xmlns:ns6="activity.jsonRender.input+83d19f83-996f-421d-be9d-efd481520636+ActivityInputType"
@@ -460,6 +464,9 @@
             <plnk:partnerLinkType name="partnerLinkType1">
                 <plnk:role name="use" portType="ptyp:Prezzo"/>
             </plnk:partnerLinkType>
+            <plnk:partnerLinkType name="partnerLinkType2">
+                <plnk:role name="use" portType="ptyp2:operatori"/>
+            </plnk:partnerLinkType>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
             <wsdl:import namespace="http://www.example.org/CompanyOrders"/>
             <wsdl:import namespace="http://www.example.org/wsdl/1753281285130"/>
@@ -472,7 +479,6 @@
             <wsdl:import namespace="http://www.example.org/wsdl/1753281285260"/>
             <wsdl:import namespace="http://www.example.org/wsdl/1753281285130"/>
             <wsdl:import namespace="http://www.example.org/wsdl/1753281285130"/>
-            <wsdl:import namespace="http://xmlns.example.com/20250724111926PLT"/>
             <wsdl:message name="postRequest">
                 <wsdl:part element="extns1:Request" name="azienda" tibex:hasMultipleNamespaces="false"/>
                 <wsdl:part element="extns:httpHeaders"
@@ -1034,7 +1040,7 @@
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="155"
+                                    x="140"
                                     xsi:type="notation:Bounds" y="31"/>
                                     </children>
 
@@ -1080,7 +1086,7 @@
 
                                     <layoutConstraint
                                     height="121"
-                                    width="239"
+                                    width="263"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -1206,9 +1212,65 @@
 
                                     <layoutConstraint
                                     height="165"
-                                    width="347"
+                                    width="303"
                                     x="316"
                                     xsi:type="notation:Bounds" y="244"/>
+                                    </children>
+
+                                    <children type="4002 bw.generalactivities.bwassign">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.7"/>
+
+                                    <layoutConstraint
+                                    height="40"
+                                    width="40"
+                                    x="551"
+                                    xsi:type="notation:Bounds" y="135"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -1451,7 +1513,7 @@
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1482,6 +1544,17 @@
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.6/@activity/@activities.1/@activity/@activity/@links/@children.3"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.4"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -1507,12 +1580,18 @@
         <tibex:namespaceItem
             namespace="http://www.example.org/operatori" prefix="tns10"/>
         <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns11"/>
+        <tibex:namespaceItem
+            namespace="http://xmlns.example.com/20250724111926PLT" prefix="tns2"/>
+        <tibex:namespaceItem namespace="http://simple.schema/simple" prefix="tns9"/>
+        <tibex:namespaceItem
+            namespace="http://xmlns.example.com/20250715125007PLT" prefix="tns12"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/CompanyOrders"/>
     <bpws:import importType="http://schemas.xmlsoap.org/wsdl/"
         location="../../Service%20Descriptors/prezzo.wsdl" namespace="http://www.example.org/wsdl/1753281285130"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/RichiesteSOAP"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://simple.schema/simple"/>
     <bpws:partnerLinks>
         <bpws:partnerLink myRole="use" name="ordini"
             partnerLinkType="ns:partnerLinkType" sca-bpel:ignore="false" sca-bpel:service="ordini"/>
@@ -1554,6 +1633,7 @@
             name="_error_trovaPrezzo" sca-bpel:internal="true"/>
         <bpws:variable element="ns4:ActivityInput" name="Log1-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns22:qty" name="Variable"/>
+        <bpws:variable element="ns30:primitive" name="Variable1"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1578,6 +1658,7 @@
                                 <bpws:link name="CallProcessToJDBCQuery" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="IterateTopostOut" tibex:linkType="SUCCESS"/>
                                 <bpws:link name="JDBCQueryToIterate" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="Assign1TopostOut" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart"
                                 tibex:constructor="onMessageStart" tibex:xpdlId="1765e7be-b83f-4fea-b52e-11b114c60455"/>
@@ -1589,13 +1670,14 @@
                                 tibex:xpdlId="7b71a378-7468-4ad5-b779-bbe09eab58dd" variable="postOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/20250715125007PLT&quot; xmlns:tns1=&quot;http://www.example.org/CompanyOrders&quot; xmlns:tns10=&quot;http://www.example.org/operatori&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery&quot;/>&#xa;    &lt;xsl:param name=&quot;Variable&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:Response>&#xa;            &lt;tns1:Status>&#xa;                &lt;xsl:value-of select=&quot;200&quot;/>&#xa;            &lt;/tns1:Status>&#xa;            &lt;tns1:Message>&#xa;                &lt;xsl:value-of select=&quot;'Ricerca avvenuta con successo'&quot;/>&#xa;            &lt;/tns1:Message>&#xa;            &lt;tns1:Company>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/company&quot;/>&#xa;            &lt;/tns1:Company>&#xa;            &lt;tns1:Country>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/country&quot;/>&#xa;            &lt;/tns1:Country>&#xa;            &lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&#xa;                &lt;tns1:Orders>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;id&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:type>&#xa;                        &lt;xsl:value-of select=&quot;type&quot;/>&#xa;                    &lt;/tns1:type>&#xa;                    &lt;tns1:name>&#xa;                        &lt;xsl:value-of select=&quot;name&quot;/>&#xa;                    &lt;/tns1:name>&#xa;                    &lt;tns1:qty>&#xa;                        &lt;xsl:value-of select=&quot;qty&quot;/>&#xa;                    &lt;/tns1:qty>&#xa;                &lt;/tns1:Orders>&#xa;            &lt;/xsl:for-each>&#xa;            &lt;tns1:City>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/city&quot;/>&#xa;            &lt;/tns1:City>&#xa;            &lt;tns1:prezzoTot>&#xa;                &lt;xsl:value-of select=&quot;$Variable&quot;/>&#xa;            &lt;/tns1:prezzoTot>&#xa;        &lt;/tns1:Response>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns12=&quot;http://xmlns.example.com/20250715125007PLT&quot; xmlns:tns1=&quot;http://www.example.org/CompanyOrders&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery&quot;/>&#xa;    &lt;xsl:param name=&quot;Variable&quot;/>&#xa;    &lt;xsl:param name=&quot;Variable1&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:Response>&#xa;            &lt;tns1:Status>&#xa;                &lt;xsl:value-of select=&quot;if ($Variable1 = true() ) then 'KO' else 'OK'&quot;/>&#xa;            &lt;/tns1:Status>&#xa;            &lt;tns1:Message>&#xa;                &lt;xsl:value-of select=&quot;if ($Variable1 = true() ) then 'Ricerca non ha trovato risultati' else 'Ricerca avvenuta con successo'&quot;/>&#xa;            &lt;/tns1:Message>&#xa;            &lt;tns1:Company>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/company&quot;/>&#xa;            &lt;/tns1:Company>&#xa;            &lt;tns1:Country>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/country&quot;/>&#xa;            &lt;/tns1:Country>&#xa;            &lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&#xa;                &lt;tns1:Orders>&#xa;                    &lt;tns1:Id>&#xa;                        &lt;xsl:value-of select=&quot;id&quot;/>&#xa;                    &lt;/tns1:Id>&#xa;                    &lt;tns1:type>&#xa;                        &lt;xsl:value-of select=&quot;type&quot;/>&#xa;                    &lt;/tns1:type>&#xa;                    &lt;tns1:name>&#xa;                        &lt;xsl:value-of select=&quot;name&quot;/>&#xa;                    &lt;/tns1:name>&#xa;                    &lt;tns1:qty>&#xa;                        &lt;xsl:value-of select=&quot;qty&quot;/>&#xa;                    &lt;/tns1:qty>&#xa;                &lt;/tns1:Orders>&#xa;            &lt;/xsl:for-each>&#xa;            &lt;tns1:City>&#xa;                &lt;xsl:value-of select=&quot;$JDBCQuery/Record[1]/city&quot;/>&#xa;            &lt;/tns1:City>&#xa;            &lt;tns1:prezzoTot>&#xa;                &lt;xsl:value-of select=&quot;if ($Variable1 = true() ) then 0 else $Variable&quot;/>&#xa;            &lt;/tns1:prezzoTot>&#xa;        &lt;/tns1:Response>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://xmlns.example.com/20250715125007PLT" xmlns:tns1="http://www.example.org/CompanyOrders" xmlns:tns10="http://www.example.org/operatori" version="2.0"&gt;&lt;xsl:param name="JDBCQuery"/&gt;&lt;xsl:param name="Variable"/&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns2:postResponse&gt;&lt;ordine&gt;&lt;tns1:Response&gt;&lt;tns1:Status&gt;&lt;xsl:value-of select="200"/&gt;&lt;/tns1:Status&gt;&lt;tns1:Message&gt;&lt;xsl:value-of select="'Ricerca avvenuta con successo'"/&gt;&lt;/tns1:Message&gt;&lt;tns1:Company&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/company"/&gt;&lt;/tns1:Company&gt;&lt;tns1:Country&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/country"/&gt;&lt;/tns1:Country&gt;&lt;xsl:for-each select="$JDBCQuery/Record"&gt;&lt;tns1:Orders&gt;&lt;tns1:Id&gt;&lt;xsl:value-of select="id"/&gt;&lt;/tns1:Id&gt;&lt;tns1:type&gt;&lt;xsl:value-of select="type"/&gt;&lt;/tns1:type&gt;&lt;tns1:name&gt;&lt;xsl:value-of select="name"/&gt;&lt;/tns1:name&gt;&lt;tns1:qty&gt;&lt;xsl:value-of select="qty"/&gt;&lt;/tns1:qty&gt;&lt;/tns1:Orders&gt;&lt;/xsl:for-each&gt;&lt;tns1:City&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/city"/&gt;&lt;/tns1:City&gt;&lt;tns1:prezzoTot&gt;&lt;xsl:value-of select="$Variable"/&gt;&lt;/tns1:prezzoTot&gt;&lt;/tns1:Response&gt;&lt;/ordine&gt;&lt;/tns2:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns12="http://xmlns.example.com/20250715125007PLT" xmlns:tns1="http://www.example.org/CompanyOrders" version="2.0"&gt;&lt;xsl:param name="JDBCQuery"/&gt;&lt;xsl:param name="Variable"/&gt;&lt;xsl:param name="Variable1"/&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns12:postResponse&gt;&lt;ordine&gt;&lt;tns1:Response&gt;&lt;tns1:Status&gt;&lt;xsl:value-of select="if ($Variable1 = true() ) then 'KO' else 'OK'"/&gt;&lt;/tns1:Status&gt;&lt;tns1:Message&gt;&lt;xsl:value-of select="if ($Variable1 = true() ) then 'Ricerca non ha trovato risultati' else 'Ricerca avvenuta con successo'"/&gt;&lt;/tns1:Message&gt;&lt;tns1:Company&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/company"/&gt;&lt;/tns1:Company&gt;&lt;tns1:Country&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/country"/&gt;&lt;/tns1:Country&gt;&lt;xsl:for-each select="$JDBCQuery/Record"&gt;&lt;tns1:Orders&gt;&lt;tns1:Id&gt;&lt;xsl:value-of select="id"/&gt;&lt;/tns1:Id&gt;&lt;tns1:type&gt;&lt;xsl:value-of select="type"/&gt;&lt;/tns1:type&gt;&lt;tns1:name&gt;&lt;xsl:value-of select="name"/&gt;&lt;/tns1:name&gt;&lt;tns1:qty&gt;&lt;xsl:value-of select="qty"/&gt;&lt;/tns1:qty&gt;&lt;/tns1:Orders&gt;&lt;/xsl:for-each&gt;&lt;tns1:City&gt;&lt;xsl:value-of select="$JDBCQuery/Record[1]/city"/&gt;&lt;/tns1:City&gt;&lt;tns1:prezzoTot&gt;&lt;xsl:value-of select="if ($Variable1 = true() ) then 0 else $Variable"/&gt;&lt;/tns1:prezzoTot&gt;&lt;/tns1:Response&gt;&lt;/ordine&gt;&lt;/tns12:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
-                                    <bpws:target linkName="IterateTopostOut"/>
+                                    <bpws:target linkName="Assign1TopostOut"/>
                                 </bpws:targets>
+                                <bpws:correlations/>
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
@@ -1897,6 +1979,40 @@
                                     </bpws:forEach>
                                 </bpws:sequence>
                             </bpws:scope>
+                            <bpws:extensionActivity>
+                                <tibex:activityExtension
+                                    inputVariable="Variable1"
+                                    name="Assign1"
+                                    outputVariable="Variable1"
+                                    tibex:xpdlId="df06c490-52bb-4df6-80e2-c85dcce8a209" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="IterateTopostOut"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="Assign1TopostOut"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;http://simple.schema/simple&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JDBCQuery&quot;/>&lt;xsl:template name=&quot;Variable1&quot; match=&quot;/&quot;>&lt;tns9:primitive>&lt;xsl:value-of select=&quot;count($JDBCQuery/Record) = 0&quot;/>&lt;/tns9:primitive>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.generalactivities.bwassign"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
+                                    <value
+                                    processVariable="Variable1" xsi:type="generalactivities:BWAssign"/>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                </tibex:activityExtension>
+                            </bpws:extensionActivity>
                         </bpws:flow>
                     </bpws:scope>
                 </bpws:onMessage>
