@@ -5,7 +5,7 @@
     "title" : "ordini",
     "description" : "ordini service"
   },
-  "host" : "localhost:8083",
+  "host" : "localhost:8080",
   "basePath" : "/",
   "schemes" : [ "http" ],
   "paths" : {

@@ -9,6 +9,10 @@
     xmlns:ns1="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6691cd73-99dc-4536-90b2-b573949e3813+input"
     xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6691cd73-99dc-4536-90b2-b573949e3813+output"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.JDBCQuery"
+    xmlns:ns4="http://www.example.org/wsdl/1753281285260"
+    xmlns:ns5="http://tns.tibco.com/bw/palette/internal/activityerror+591b8ddf-40d5-4156-a733-c24a2f57c1c4"
+    xmlns:ns6="http://www.example.org/wsdl/1753281285130"
+    xmlns:ns7="http://tns.tibco.com/bw/palette/internal/activityerror+5da12e4f-372c-4344-8ee4-60a6d8f06413"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -353,6 +357,8 @@
             xmlns:extns1="http://tns.tibco.com/bw/REST"
             xmlns:extns2="http://xmlns.example.com/operatori/parameters"
             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+            xmlns:ptyp="http://www.example.org/wsdl/1753281285260"
+            xmlns:ptyp1="http://www.example.org/wsdl/1753281285130"
             xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
             xmlns:tns="http://xmlns.example.com/20250724111926PLT"
             xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop"
@@ -362,6 +368,8 @@
             </plnk:partnerLinkType>
             <wsdl:import namespace="http://www.example.org/operatori"/>
             <wsdl:import namespace="http://tns.tibco.com/bw/REST"/>
+            <wsdl:import namespace="http://www.example.org/wsdl/1753281285260"/>
+            <wsdl:import namespace="http://www.example.org/wsdl/1753281285130"/>
             <wsdl:message name="postRequest">
                 <wsdl:part element="extns:operatoriIn" name="input" tibex:hasMultipleNamespaces="false"/>
                 <wsdl:part element="extns1:httpHeaders"
@@ -929,7 +937,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="283"
+                                    height="285"
                                     width="756" xsi:type="notation:Bounds"/>
                                     </children>
 
@@ -949,7 +957,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
 
                                     <layoutConstraint
-                                    height="283"
+                                    height="285"
                                     width="759"
                                     x="15" xsi:type="notation:Bounds"/>
                                     </children>
@@ -965,7 +973,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity"/>
 
                                     <layoutConstraint
-                                    height="307"
+                                    height="309"
                                     width="799" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1025,7 +1033,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     <layoutConstraint
-                                    height="326"
+                                    height="328"
                                     width="861"
                                     x="2" xsi:type="notation:Bounds"/>
                                     </children>
@@ -1039,7 +1047,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    height="356" width="880" xsi:type="notation:Bounds"/>
+                                    height="358" width="880" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1138,6 +1146,10 @@
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+6691cd73-99dc-4536-90b2-b573949e3813+input" prefix="tns2"/>
         <tibex:namespaceItem
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.org/wsdl/1753281285130" prefix="ns"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.org/wsdl/1753281285260" prefix="tns"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/operatori"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
@@ -1305,27 +1317,29 @@
                                     tibex:xpdlId="dd7f1adb-097d-4991-80ed-d9ec24c41ae8" variable="postOut-input">
                                     <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20250724111926PLT&quot; xmlns:tns1=&quot;http://www.example.org/operatori&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:operatoriOut>&#xa;            &lt;tns1:Status>&#xa;                &lt;xsl:value-of select=&quot;'200'&quot;/>&#xa;            &lt;/tns1:Status>&#xa;            &lt;tns1:Message>&#xa;                &lt;xsl:value-of select=&quot;'Trovato operatore idoneo'&quot;/>&#xa;            &lt;/tns1:Message>&#xa;            &lt;tns1:MoT>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;Spedizione assegnata a &amp;quot;,$JDBCQuery/Record[1]/Company, &amp;quot;, la consegna avverà via &amp;quot;,$JDBCQuery/Record[1]/Type,&amp;quot; in &amp;quot;, xsd:string( $JDBCQuery/Record[1]/DeliveryTime),&amp;quot; giorni&amp;quot;)&quot;/>&#xa;            &lt;/tns1:MoT>&#xa;        &lt;/tns1:operatoriOut>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20250724111926PLT&quot; xmlns:tns1=&quot;http://www.example.org/operatori&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;JDBCQuery&quot;/>&#xa;    &lt;xsl:template name=&quot;postOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:operatoriOut>&#xa;            &lt;tns1:Status>&#xa;                &lt;xsl:value-of select=&quot;'200'&quot;/>&#xa;            &lt;/tns1:Status>&#xa;            &lt;tns1:Message>&#xa;                &lt;xsl:value-of select=&quot;'Trovato operatore              idoneo'&quot;/>&#xa;            &lt;/tns1:Message>&#xa;            &lt;tns1:MoT>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;Spedizione assegnata a              &amp;quot;,$JDBCQuery/Record[1]/Company, &amp;quot;, la              consegna avverà via              &amp;quot;,$JDBCQuery/Record[1]/Type,&amp;quot; in              &amp;quot;, xsd:string(              $JDBCQuery/Record[1]/DeliveryTime),&amp;quot;              giorni&amp;quot;)&quot;/>&#xa;            &lt;/tns1:MoT>&#xa;        &lt;/tns1:operatoriOut>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
-                                    <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0"
-													encoding="UTF-8"?&gt; &lt;xsl:stylesheet
-													xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-													xmlns:tns="http://xmlns.example.com/20250724111926PLT"
-													xmlns:tns1="http://www.example.org/operatori"
-													xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-													version="2.0"&gt;&lt;xsl:param
-													name="JDBCQuery"/&gt;&lt;xsl:template name="postOut-input"
-													match="/"&gt;&lt;tns:postResponse&gt;&lt;output&gt;&lt;tns1:operatoriOut&gt;&lt;tns1:Status&gt;&lt;xsl:value-of
-													select="'200'"/&gt;&lt;/tns1:Status&gt;&lt;tns1:Message&gt;&lt;xsl:value-of
-													select="'Trovato operatore
-													idoneo'"/&gt;&lt;/tns1:Message&gt;&lt;tns1:MoT&gt;&lt;xsl:value-of
-													select="concat(&amp;quot;Spedizione assegnata a
-													&amp;quot;,$JDBCQuery/Record[1]/Company, &amp;quot;, la
-													consegna avverà via
-													&amp;quot;,$JDBCQuery/Record[1]/Type,&amp;quot; in
-													&amp;quot;, xsd:string(
-													$JDBCQuery/Record[1]/DeliveryTime),&amp;quot;
-													giorni&amp;quot;)"/&gt;&lt;/tns1:MoT&gt;&lt;/tns1:operatoriOut&gt;&lt;/output&gt;&lt;/tns:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+                                    <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20250724111926PLT" xmlns:tns1="http://www.example.org/operatori" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"&gt;
+    &lt;xsl:param name="JDBCQuery"/&gt;
+    &lt;xsl:template name="postOut-input" match="/"&gt;
+        &lt;tns3:postResponse&gt;
+            &lt;output&gt;
+                &lt;tns1:operatoriOut&gt;
+                    &lt;tns1:Status&gt;
+                        &lt;xsl:value-of select="'200'"/&gt;
+                    &lt;/tns1:Status&gt;
+                    &lt;tns1:Message&gt;
+                        &lt;xsl:value-of select="'Trovato operatore              idoneo'"/&gt;
+                    &lt;/tns1:Message&gt;
+                    &lt;tns1:MoT&gt;
+                        &lt;xsl:value-of select="concat(&amp;quot;Spedizione assegnata a              &amp;quot;,$JDBCQuery/Record[1]/Company, &amp;quot;, la              consegna avverà via              &amp;quot;,$JDBCQuery/Record[1]/Type,&amp;quot; in              &amp;quot;, xsd:string(              $JDBCQuery/Record[1]/DeliveryTime),&amp;quot;              giorni&amp;quot;)"/&gt;
+                    &lt;/tns1:MoT&gt;
+                &lt;/tns1:operatoriOut&gt;
+            &lt;/output&gt;
+        &lt;/tns3:postResponse&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStartTopostOut"/>
                                     </bpws:targets>
@@ -1342,21 +1356,28 @@
                                 portType="ns:operatori"
                                 tibex:xpdlId="7e58cde1-91a0-4f9a-9035-7cabfba2baf8" variable="NullReply-input">
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-									&lt;xsl:stylesheet
-									xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-									xmlns:tns="http://xmlns.example.com/20250724111926PLT"
-									xmlns:tns1="http://www.example.org/operatori"
-									version="2.0"&gt;&lt;xsl:template name="NullReply-input"
-									match="/"&gt;&lt;tns:postResponse&gt;&lt;output&gt;&lt;tns1:operatoriOut&gt;&lt;tns1:Status&gt;&lt;xsl:value-of
-									select="&amp;quot;200&amp;quot;"/&gt;&lt;/tns1:Status&gt;&lt;tns1:Message&gt;&lt;xsl:value-of
-									select="&amp;quot;Ricerca avvenuta con
-									successo&amp;quot;"/&gt;&lt;/tns1:Message&gt;&lt;tns1:MoT&gt;&lt;xsl:value-of
-									select="&amp;quot;Non esiste un mezzo di trasporto adatto per
-									l'ordine
-									inserito&amp;quot;"/&gt;&lt;/tns1:MoT&gt;&lt;/tns1:operatoriOut&gt;&lt;/output&gt;&lt;/tns:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns3="http://xmlns.example.com/20250724111926PLT" xmlns:tns1="http://www.example.org/operatori" version="2.0"&gt;
+    &lt;xsl:template name="NullReply-input" match="/"&gt;
+        &lt;tns3:postResponse&gt;
+            &lt;output&gt;
+                &lt;tns1:operatoriOut&gt;
+                    &lt;tns1:Status&gt;
+                        &lt;xsl:value-of select="&amp;quot;200&amp;quot;"/&gt;
+                    &lt;/tns1:Status&gt;
+                    &lt;tns1:Message&gt;
+                        &lt;xsl:value-of select="&amp;quot;Ricerca avvenuta con          successo&amp;quot;"/&gt;
+                    &lt;/tns1:Message&gt;
+                    &lt;tns1:MoT&gt;
+                        &lt;xsl:value-of select="&amp;quot;Non esiste un mezzo di trasporto adatto per          l'ordine          inserito&amp;quot;"/&gt;
+                    &lt;/tns1:MoT&gt;
+                &lt;/tns1:operatoriOut&gt;
+            &lt;/output&gt;
+        &lt;/tns3:postResponse&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/20250724111926PLT&quot; xmlns:tns1=&quot;http://www.example.org/operatori&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;NullReply-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:operatoriOut>&#xa;            &lt;tns1:Status>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;200&amp;quot;&quot;/>&#xa;            &lt;/tns1:Status>&#xa;            &lt;tns1:Message>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;Ricerca avvenuta con successo&amp;quot;&quot;/>&#xa;            &lt;/tns1:Message>&#xa;            &lt;tns1:MoT>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;Non esiste un mezzo di trasporto adatto per l'ordine inserito&amp;quot;&quot;/>&#xa;            &lt;/tns1:MoT>&#xa;        &lt;/tns1:operatoriOut>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://xmlns.example.com/20250724111926PLT&quot; xmlns:tns1=&quot;http://www.example.org/operatori&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;NullReply-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:operatoriOut>&#xa;            &lt;tns1:Status>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;200&amp;quot;&quot;/>&#xa;            &lt;/tns1:Status>&#xa;            &lt;tns1:Message>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;Ricerca avvenuta con          successo&amp;quot;&quot;/>&#xa;            &lt;/tns1:Message>&#xa;            &lt;tns1:MoT>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;Non esiste un mezzo di trasporto adatto per          l'ordine          inserito&amp;quot;&quot;/>&#xa;            &lt;/tns1:MoT>&#xa;        &lt;/tns1:operatoriOut>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <bpws:targets>
                                     <bpws:target linkName="WhileToNullReply"/>
